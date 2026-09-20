@@ -1,0 +1,42 @@
+{
+  "domain": "lpr-submission-review",
+  "version": 1,
+  "sample_id": "public-sample-016",
+  "actors": [
+    "利率管理人员",
+    "贷款账户系统",
+    "客户服务人员",
+    "审计人员"
+  ],
+  "facts": [
+    "LPR分别公布一年期和五年期以上报价",
+    "本次报价在下一次发布前有效",
+    "贷款合同可能在不同日期引用生效基准"
+  ],
+  "constraints": [
+    "报价机构准入",
+    "分期限报送",
+    "异常复核",
+    "计算输入冻结"
+  ],
+  "records": [
+    {
+      "id": "lpr-submission-review-source",
+      "kind": "source",
+      "label": "LPR分别公布一年期和五年期以上报价",
+      "status": "active"
+    },
+    {
+      "id": "lpr-submission-review-review",
+      "kind": "review",
+      "label": "报价机构准入",
+      "status": "pending"
+    },
+    {
+      "id": "lpr-submission-review-history",
+      "kind": "history",
+      "label": "贷款合同可能在不同日期引用生效基准",
+      "status": "historical"
+    }
+  ]
+}
