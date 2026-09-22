@@ -1,0 +1,24 @@
+{
+  "banks": [
+    { "id": "B01", "name": "华信银行", "qualified": true, "conflicted_reviewer": "R01" },
+    { "id": "B02", "name": "江洲银行", "qualified": true, "conflicted_reviewer": "R02" },
+    { "id": "B03", "name": "岚山银行", "qualified": true, "conflicted_reviewer": null },
+    { "id": "B04", "name": "北辰银行", "qualified": true, "conflicted_reviewer": null },
+    { "id": "B05", "name": "瀚海银行", "qualified": true, "conflicted_reviewer": null },
+    { "id": "B06", "name": "澜庭银行", "qualified": true, "conflicted_reviewer": null },
+    { "id": "B07", "name": "启澜银行", "qualified": true, "conflicted_reviewer": null },
+    { "id": "B08", "name": "新禾银行", "qualified": false, "disqualified_reason": "报价行资格年审未通过，不得参与本期报送", "conflicted_reviewer": null },
+    { "id": "B09", "name": "望舒银行", "qualified": true, "conflicted_reviewer": null }
+  ],
+  "reviewers": [
+    { "id": "R01", "name": "周闻笛", "role": "利率管理人员" },
+    { "id": "R02", "name": "沈砚", "role": "利率管理人员" },
+    { "id": "R03", "name": "林策", "role": "审计人员" },
+    { "id": "R04", "name": "顾行之", "role": "审计人员" }
+  ],
+  "sources": [
+    { "code": "EMAIL", "label": "加密邮件正文/附件" },
+    { "code": "SPREADSHEET", "label": "报价报送表" }
+  ],
+  "note": "conflicted_reviewer 表示该审查人员与机构存在关联，须回避该机构全部审查动作。"
+}

@@ -1,0 +1,126 @@
+{
+  "period_id": "LPR-2026-09",
+  "note": "按接收时间记录的原始报送事件，来源混合了加密邮件与报价报送表；系统不修改原始事件，仅据此生成版本与标记。",
+  "events": [
+    {
+      "id": "EV-001",
+      "bank_id": "B01",
+      "received_at": "2026-09-18T09:30:00+08:00",
+      "source": "EMAIL",
+      "data_basis": "依据行内资金转移定价及同业负债成本测算",
+      "quotes": [{ "tenor": "1Y", "value": 3.0 }, { "tenor": "5Y_PLUS", "value": 3.55 }]
+    },
+    {
+      "id": "EV-002",
+      "bank_id": "B02",
+      "received_at": "2026-09-18T10:00:00+08:00",
+      "source": "SPREADSHEET",
+      "data_basis": "综合负债成本、信贷投放计划与市场供求",
+      "quotes": [{ "tenor": "1Y", "value": 3.05 }, { "tenor": "5Y_PLUS", "value": 3.6 }]
+    },
+    {
+      "id": "EV-003",
+      "bank_id": "B03",
+      "received_at": "2026-09-18T10:30:00+08:00",
+      "source": "EMAIL",
+      "data_basis": "资金成本测算（邮件填报）",
+      "quotes": [{ "tenor": "1Y", "value": 0.0305 }, { "tenor": "5Y_PLUS", "value": 0.036 }]
+    },
+    {
+      "id": "EV-004",
+      "bank_id": "B04",
+      "received_at": "2026-09-18T11:00:00+08:00",
+      "source": "SPREADSHEET",
+      "data_basis": "仅完成一年期报送，五年期以上待审贷会后补报",
+      "quotes": [{ "tenor": "1Y", "value": 3.1 }]
+    },
+    {
+      "id": "EV-005",
+      "bank_id": "B05",
+      "received_at": "2026-09-18T11:30:00+08:00",
+      "source": "EMAIL",
+      "data_basis": "中长期信贷需求偏强，上浮幅度体现期限溢价与风险溢价",
+      "quotes": [{ "tenor": "1Y", "value": 3.1 }, { "tenor": "5Y_PLUS", "value": 3.65 }]
+    },
+    {
+      "id": "EV-006",
+      "bank_id": "B01",
+      "received_at": "2026-09-20T15:00:00+08:00",
+      "source": "SPREADSHEET",
+      "is_correction": true,
+      "revision_reason": "短端资金价格随中期借贷便利操作上行，修正一年期报价5个基点，五年期以上维持不变",
+      "data_basis": "依据最新中期借贷便利操作利率与行内FTP重新测算",
+      "quotes": [{ "tenor": "1Y", "value": 3.05 }, { "tenor": "5Y_PLUS", "value": 3.55 }]
+    },
+    {
+      "id": "EV-007",
+      "bank_id": "B02",
+      "received_at": "2026-09-21T08:00:00+08:00",
+      "source": "EMAIL",
+      "data_basis": "重复发送此前报送表内容，邮件注明请以此前表格为准",
+      "quotes": [{ "tenor": "1Y", "value": 3.05 }, { "tenor": "5Y_PLUS", "value": 3.6 }]
+    },
+    {
+      "id": "EV-008",
+      "bank_id": "B03",
+      "received_at": "2026-09-20T16:00:00+08:00",
+      "source": "EMAIL",
+      "is_correction": true,
+      "revision_reason": "首次报送误以小数比例（3.05%写作0.0305）填报，现按百分数口径更正",
+      "data_basis": "资金成本测算，按百分数口径重新报送",
+      "quotes": [{ "tenor": "1Y", "value": 3.05 }, { "tenor": "5Y_PLUS", "value": 3.6 }]
+    },
+    {
+      "id": "EV-009",
+      "bank_id": "B06",
+      "received_at": "2026-09-19T09:00:00+08:00",
+      "source": "SPREADSHEET",
+      "data_basis": "参考政策利率与同业存单发行利率",
+      "quotes": [{ "tenor": "1Y", "value": 3.05 }, { "tenor": "5Y_PLUS", "value": 3.6 }]
+    },
+    {
+      "id": "EV-010",
+      "bank_id": "B07",
+      "received_at": "2026-09-19T09:30:00+08:00",
+      "source": "EMAIL",
+      "data_basis": "负债成本稳定，按加点幅度报价",
+      "quotes": [{ "tenor": "1Y", "value": 3.0 }, { "tenor": "5Y_PLUS", "value": 3.55 }]
+    },
+    {
+      "id": "EV-011",
+      "bank_id": "B08",
+      "received_at": "2026-09-19T10:00:00+08:00",
+      "source": "SPREADSHEET",
+      "data_basis": "该行报价行资格年审未通过仍提交了报价",
+      "quotes": [{ "tenor": "1Y", "value": 3.0 }, { "tenor": "5Y_PLUS", "value": 3.5 }]
+    },
+    {
+      "id": "EV-012",
+      "bank_id": "B09",
+      "received_at": "2026-09-20T09:00:00+08:00",
+      "source": "EMAIL",
+      "data_basis": "按加点形成模型测算",
+      "quotes": [{ "tenor": "1Y", "value": 3.0 }, { "tenor": "5Y_PLUS", "value": 3.55 }]
+    },
+    {
+      "id": "EV-013",
+      "bank_id": "B04",
+      "received_at": "2026-09-21T08:45:00+08:00",
+      "source": "EMAIL",
+      "is_correction": true,
+      "revision_reason": "补报五年期以上报价（审贷会刚结束）",
+      "data_basis": "审贷会后确定的中长期资金价格",
+      "quotes": [{ "tenor": "5Y_PLUS", "value": 3.65 }]
+    },
+    {
+      "id": "EV-014",
+      "bank_id": "B09",
+      "received_at": "2026-09-21T08:50:00+08:00",
+      "source": "SPREADSHEET",
+      "is_correction": true,
+      "revision_reason": "试图在截止后上调两期限报价各10个基点",
+      "data_basis": "截止后市场突变，紧急申请调整",
+      "quotes": [{ "tenor": "1Y", "value": 3.1 }, { "tenor": "5Y_PLUS", "value": 3.65 }]
+    }
+  ]
+}

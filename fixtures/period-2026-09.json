@@ -1,0 +1,50 @@
+{
+  "period_id": "LPR-2026-09",
+  "rules_version": "R2026-09-01",
+  "label": "2026年9月LPR报价期",
+  "window_open": "2026-09-18T09:00:00+08:00",
+  "deadline": "2026-09-21T08:30:00+08:00",
+  "publish_at": "2026-09-21T09:20:00+08:00",
+  "tenors": [
+    {
+      "code": "1Y",
+      "label": "一年期",
+      "unit": "percent",
+      "step": 0.01,
+      "min": 0.5,
+      "max": 10
+    },
+    {
+      "code": "5Y_PLUS",
+      "label": "五年期以上",
+      "unit": "percent",
+      "step": 0.01,
+      "min": 0.5,
+      "max": 10
+    }
+  ],
+  "unit_heuristics": {
+    "decimal_ratio_max": 0.5,
+    "basis_points_min": 20,
+    "note": "0<值<0.5 判定为误按小数比例报送；值>20 判定为误按基点报送，二者均为单位错误"
+  },
+  "previous_publish": {
+    "1Y": 3.0,
+    "5Y_PLUS": 3.55
+  },
+  "anomaly": {
+    "vs_previous_max_bp": 8,
+    "vs_median_max_bp": 5,
+    "note": "与上一期公布值偏离超过8个基点，或与当期有效报价中位数偏离超过5个基点，提示异常复核"
+  },
+  "quorum": {
+    "min_included_per_tenor": 5,
+    "note": "每个期限纳入计算的有效报价不得少于5家"
+  },
+  "window_rules": [
+    "截止前的更正形成新版本，历史版本全部保留",
+    "截止后的补报与更正一律登记为逾期，不得进入当期计算",
+    "缺报、重复报送、单位错误未处置完毕前阻断冻结",
+    "任何剔除或恢复均须两名无关联审查人员双人确认，并保存决定时的规则版本"
+  ]
+}
