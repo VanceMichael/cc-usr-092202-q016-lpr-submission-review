@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LPR报价报送审查样例",
+  "type": "object",
+  "required": ["domain", "sample_id", "cycle", "roster", "reviewers", "intakes"],
+  "properties": {
+    "domain": { "type": "string", "const": "lpr-submission-review" },
+    "sample_id": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "cycle": {
+      "type": "object",
+      "required": ["cycleId", "windowOpenAt", "deadlineAt"],
+      "properties": {
+        "cycleId": { "type": "string", "minLength": 1 },
+        "publishDate": { "type": "string" },
+        "windowOpenAt": { "type": "string", "minLength": 1 },
+        "deadlineAt": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "roster": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["institutionId", "name", "status"],
+        "properties": {
+          "institutionId": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["active", "suspended", "removed"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "reviewers": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["active", "inactive"] },
+          "affiliatedInstitutionIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "intakes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["channel", "submittedAt", "payload"],
+        "properties": {
+          "channel": { "type": "string", "enum": ["email", "spreadsheet", "system"] },
+          "submittedAt": { "type": "string", "minLength": 1 },
+          "payload": {
+            "type": "object",
+            "required": ["institutionId", "tenor", "value", "unit", "sourceDescription"],
+            "properties": {
+              "submissionId": { "type": ["string", "null"] },
+              "institutionId": { "type": "string", "minLength": 1 },
+              "tenor": { "type": "string", "enum": ["1Y", "5Y+", "2Y"] },
+              "value": { "type": "number" },
+              "unit": { "type": "string" },
+              "sourceDescription": { "type": "string" },
+              "revisionReason": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "at"],
+        "properties": {
+          "type": { "type": "string", "enum": ["comment", "propose", "confirm"] }
+        },
+        "additionalProperties": true
+      }
+    },
+    "expect": { "type": "object" }
+  },
+  "additionalProperties": false
+}

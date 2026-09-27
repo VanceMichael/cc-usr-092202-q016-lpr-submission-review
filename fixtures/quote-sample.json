@@ -1,0 +1,88 @@
+{
+  "domain": "lpr-submission-review",
+  "sample_id": "public-sample-016",
+  "description": "2026年9月报价周期公开样例：不涉及真实机构数据，机构名为虚拟代号。来件混自邮件与表格，统一受理后按本样例回放。",
+  "cycle": {
+    "cycleId": "LPR-2026-09",
+    "publishDate": "2026-09-20",
+    "windowOpenAt": "2026-09-18T08:00:00+08:00",
+    "deadlineAt": "2026-09-19T09:00:00+08:00"
+  },
+  "roster": [
+    { "institutionId": "BANK01", "name": "甲银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK02", "name": "乙银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK03", "name": "丙银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK04", "name": "丁银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK05", "name": "戊银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK06", "name": "己银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK07", "name": "庚银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK08", "name": "辛银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK09", "name": "壬银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK10", "name": "癸银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK11", "name": "子银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK12", "name": "丑银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK13", "name": "寅银行（虚拟）", "status": "active" },
+    { "institutionId": "BANK99", "name": "未入名单机构（虚拟）", "status": "suspended" }
+  ],
+  "reviewers": [
+    { "id": "rv-zhang", "name": "张审核", "status": "active", "affiliatedInstitutionIds": [] },
+    { "id": "rv-li", "name": "李审核", "status": "active", "affiliatedInstitutionIds": [] },
+    { "id": "rv-wang", "name": "王审核", "status": "active", "affiliatedInstitutionIds": [] },
+    { "id": "rv-zhao", "name": "赵审核", "status": "active", "affiliatedInstitutionIds": ["BANK06"] },
+    { "id": "rv-chen", "name": "陈审核", "status": "inactive", "affiliatedInstitutionIds": [] }
+  ],
+  "intakes": [
+    { "channel": "email", "submittedAt": "2026-09-18T08:30:00+08:00", "payload": { "submissionId": "S-0101", "institutionId": "BANK01", "tenor": "1Y", "value": 3.10, "unit": "percent", "sourceDescription": "行内资金转移定价模型结合市场资金面报价，经资产负债部审批" } },
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T08:35:00+08:00", "payload": { "submissionId": "S-0102", "institutionId": "BANK01", "tenor": "5Y+", "value": 3.60, "unit": "percent", "sourceDescription": "参考中期借贷便利与长期限国债收益率，经行内报价小组审议" } },
+    { "channel": "email", "submittedAt": "2026-09-18T08:40:00+08:00", "payload": { "submissionId": "S-0103", "institutionId": "BANK02", "tenor": "1Y", "value": 3.05, "unit": "percent", "sourceDescription": "货币市场拆借利率加点模型" } },
+    { "channel": "email", "submittedAt": "2026-09-18T08:42:00+08:00", "payload": { "submissionId": "S-0104", "institutionId": "BANK02", "tenor": "5Y+", "value": 3.55, "unit": "percent", "sourceDescription": "长期限贷款定价模型，计及期限溢价" } },
+
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T09:00:00+08:00", "payload": { "submissionId": "S-0105", "institutionId": "BANK03", "tenor": "1Y", "value": 310, "unit": "bp", "sourceDescription": "FTP模型输出" } },
+    { "channel": "email", "submittedAt": "2026-09-18T10:30:00+08:00", "payload": { "submissionId": "S-0106", "institutionId": "BANK03", "tenor": "1Y", "value": 3.10, "unit": "percent", "sourceDescription": "FTP模型输出，按百分数口径重新填报", "revisionReason": "首报经办误将3.10%以基点310bp报送，单位口径错误，截止前更正为3.10%" } },
+    { "channel": "email", "submittedAt": "2026-09-18T10:32:00+08:00", "payload": { "submissionId": "S-0107", "institutionId": "BANK03", "tenor": "5Y+", "value": 3.60, "unit": "percent", "sourceDescription": "长期贷款定价模型" } },
+
+    { "channel": "email", "submittedAt": "2026-09-18T11:00:00+08:00", "payload": { "submissionId": "S-0108", "institutionId": "BANK04", "tenor": "1Y", "value": 3.15, "unit": "percent", "sourceDescription": "综合资金成本与客户贷款收益报价" } },
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T11:05:00+08:00", "payload": { "submissionId": "S-0109", "institutionId": "BANK04", "tenor": "1Y", "value": 3.15, "unit": "percent", "sourceDescription": "综合资金成本与客户贷款收益报价（表格重报）" } },
+    { "channel": "email", "submittedAt": "2026-09-18T11:10:00+08:00", "payload": { "submissionId": "S-0110", "institutionId": "BANK04", "tenor": "5Y+", "value": 3.65, "unit": "percent", "sourceDescription": "长期限报价，参考同期限同业存单" } },
+
+    { "channel": "email", "submittedAt": "2026-09-18T08:50:00+08:00", "payload": { "submissionId": "S-0111", "institutionId": "BANK05", "tenor": "1Y", "value": 3.10, "unit": "percent", "sourceDescription": "短端资金价格加点" } },
+    { "channel": "email", "submittedAt": "2026-09-18T08:52:00+08:00", "payload": { "submissionId": "S-0112", "institutionId": "BANK05", "tenor": "5Y+", "value": 3.60, "unit": "percent", "sourceDescription": "长端综合定价" } },
+    { "channel": "email", "submittedAt": "2026-09-19T10:00:00+08:00", "payload": { "submissionId": "S-0113", "institutionId": "BANK05", "tenor": "1Y", "value": 3.05, "unit": "percent", "sourceDescription": "截止后希望以3.05%替换原报价", "revisionReason": "行内模型参数于截止后修正" } },
+
+    { "channel": "email", "submittedAt": "2026-09-18T09:10:00+08:00", "payload": { "submissionId": "S-0114", "institutionId": "BANK06", "tenor": "1Y", "value": 3.85, "unit": "percent", "sourceDescription": "按特殊客户贷款收益率报价" } },
+    { "channel": "email", "submittedAt": "2026-09-18T09:12:00+08:00", "payload": { "submissionId": "S-0115", "institutionId": "BANK06", "tenor": "5Y+", "value": 3.60, "unit": "percent", "sourceDescription": "长期限综合定价" } },
+
+    { "channel": "email", "submittedAt": "2026-09-18T09:20:00+08:00", "payload": { "submissionId": "S-0116", "institutionId": "BANK07", "tenor": "1Y", "value": 3.00, "unit": "percent", "sourceDescription": "市场化负债成本加点" } },
+    { "channel": "email", "submittedAt": "2026-09-18T09:22:00+08:00", "payload": { "submissionId": "S-0117", "institutionId": "BANK07", "tenor": "5Y+", "value": 3.50, "unit": "percent", "sourceDescription": "长端资金成本加点" } },
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T09:30:00+08:00", "payload": { "submissionId": "S-0118", "institutionId": "BANK08", "tenor": "1Y", "value": 3.05, "unit": "percent", "sourceDescription": "FTP短端报价" } },
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T09:32:00+08:00", "payload": { "submissionId": "S-0119", "institutionId": "BANK08", "tenor": "5Y+", "value": 3.55, "unit": "percent", "sourceDescription": "FTP长端报价" } },
+    { "channel": "email", "submittedAt": "2026-09-18T09:40:00+08:00", "payload": { "submissionId": "S-0120", "institutionId": "BANK09", "tenor": "1Y", "value": 3.10, "unit": "percent", "sourceDescription": "资金面与政策利率综合判断" } },
+    { "channel": "email", "submittedAt": "2026-09-18T09:42:00+08:00", "payload": { "submissionId": "S-0121", "institutionId": "BANK09", "tenor": "5Y+", "value": 3.60, "unit": "percent", "sourceDescription": "长端综合判断" } },
+    { "channel": "email", "submittedAt": "2026-09-18T09:50:00+08:00", "payload": { "submissionId": "S-0122", "institutionId": "BANK10", "tenor": "1Y", "value": 3.15, "unit": "percent", "sourceDescription": "行内报价模型输出" } },
+    { "channel": "email", "submittedAt": "2026-09-18T09:52:00+08:00", "payload": { "submissionId": "S-0123", "institutionId": "BANK10", "tenor": "5Y+", "value": 3.65, "unit": "percent", "sourceDescription": "行内报价模型输出" } },
+    { "channel": "email", "submittedAt": "2026-09-18T10:00:00+08:00", "payload": { "submissionId": "S-0124", "institutionId": "BANK11", "tenor": "1Y", "value": 3.20, "unit": "percent", "sourceDescription": "负债成本与风险溢价" } },
+    { "channel": "email", "submittedAt": "2026-09-18T10:02:00+08:00", "payload": { "submissionId": "S-0125", "institutionId": "BANK11", "tenor": "5Y+", "value": 3.70, "unit": "percent", "sourceDescription": "长期限风险溢价报价" } },
+    { "channel": "email", "submittedAt": "2026-09-18T10:10:00+08:00", "payload": { "submissionId": "S-0126", "institutionId": "BANK12", "tenor": "1Y", "value": 3.10, "unit": "percent", "sourceDescription": "综合定价模型" } },
+    { "channel": "email", "submittedAt": "2026-09-18T10:12:00+08:00", "payload": { "submissionId": "S-0127", "institutionId": "BANK12", "tenor": "5Y+", "value": 3.60, "unit": "percent", "sourceDescription": "综合定价模型" } },
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T10:20:00+08:00", "payload": { "submissionId": "S-0128", "institutionId": "BANK13", "tenor": "1Y", "value": 3.05, "unit": "percent", "sourceDescription": "同业拆借成本加点" } },
+    { "channel": "spreadsheet", "submittedAt": "2026-09-18T10:22:00+08:00", "payload": { "submissionId": "S-0129", "institutionId": "BANK13", "tenor": "5Y+", "value": 3.55, "unit": "percent", "sourceDescription": "长期限同业成本加点" } },
+
+    { "channel": "email", "submittedAt": "2026-09-18T12:00:00+08:00", "payload": { "submissionId": "S-0901", "institutionId": "BANK99", "tenor": "1Y", "value": 3.10, "unit": "percent", "sourceDescription": "非名单机构主动来件" } },
+    { "channel": "email", "submittedAt": "2026-09-18T12:10:00+08:00", "payload": { "submissionId": "S-0902", "institutionId": "BANK01", "tenor": "2Y", "value": 3.30, "unit": "percent", "sourceDescription": "误填为两年期" } }
+  ],
+  "actions": [
+    { "type": "comment", "at": "2026-09-18T10:40:00+08:00", "institutionId": "BANK03", "tenor": "1Y", "reviewerId": "rv-zhang", "content": "首报310bp为单位错误，机构已于截止前提交3.10%更正并说明理由，旧版留痕不作当期输入。" },
+    { "type": "propose", "at": "2026-09-18T13:00:00+08:00", "kind": "VOID_DUPLICATE", "institutionId": "BANK04", "tenor": "1Y", "versionId": "BANK04-1Y-v2", "reason": "与v1内容完全相同（3.15%），系邮件与表格重复提交，认定v2为重复件作废，以v1为准。", "proposedBy": "rv-zhang" },
+    { "type": "confirm", "at": "2026-09-18T13:20:00+08:00", "decisionId": "dec-001", "confirmedBy": "rv-li" },
+    { "type": "propose", "at": "2026-09-18T14:00:00+08:00", "kind": "EXCLUDE", "institutionId": "BANK06", "tenor": "1Y", "versionId": "BANK06-1Y-v1", "reason": "3.85%偏离同期中位数3.10%约24%，核实系误将特殊客户贷款收益率作为报价口径，机构截止前未更正，依规从当期计算中剔除。", "proposedBy": "rv-zhang" },
+    { "type": "confirm", "at": "2026-09-18T14:20:00+08:00", "decisionId": "dec-002", "confirmedBy": "rv-li" }
+  ],
+  "expect": {
+    "included1Y": 12,
+    "included5Y": 13,
+    "lateRegistered": 1,
+    "strayIntakes": 1,
+    "malformedIntakes": 1,
+    "excludedReasonCodes": ["REVIEW_EXCLUDED", "DUPLICATE_VOIDED", "AFTER_DEADLINE_REGISTER_ONLY"]
+  }
+}

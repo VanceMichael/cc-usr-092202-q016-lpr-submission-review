@@ -1,23 +1,35 @@
 {
   "domain": "lpr-submission-review",
-  "version": 1,
+  "version": 2,
   "sample_id": "public-sample-016",
   "actors": [
+    "报价机构经办",
     "利率管理人员",
+    "审核人员",
+    "审计人员",
     "贷款账户系统",
-    "客户服务人员",
-    "审计人员"
+    "客户服务人员"
   ],
   "facts": [
     "LPR分别公布一年期和五年期以上报价",
     "本次报价在下一次发布前有效",
-    "贷款合同可能在不同日期引用生效基准"
+    "贷款合同可能在不同日期引用生效基准",
+    "报价以百分数报送，步长为0.05个百分点",
+    "报价来件可能同时来自邮件与表格",
+    "正式公布前其他机构的报价不得相互泄露"
   ],
   "constraints": [
-    "报价机构准入",
-    "分期限报送",
-    "异常复核",
-    "计算输入冻结"
+    "报价机构准入：仅名单内有效机构可报送",
+    "分期限报送：一年期与五年期以上分别受理保存",
+    "报送窗口：窗口前拒收，截止前更正生成新版本并保留修订理由",
+    "截止后补报只登记备查，不进入当期计算",
+    "格式校验：单位、数值、精度、来源说明不合规即标记",
+    "异常提示：相对同期限中位数显著偏离仅提示不自动剔除",
+    "回避分派：与机构有利害关系的审核员不得承办该机构材料",
+    "双人确认：剔除、恢复与重复作废均须两名不同审核员签署并记录当时规则",
+    "冻结阻断：缺报、重复未认定、单位错误、待确认处置或法定数量不足不得冻结",
+    "机构隔离：机构只能查看自身材料，冻结包仅供中心审核与审计",
+    "计算输入冻结：冻结包列出纳入范围、排除理由、异常提示与签署记录并附摘要"
   ],
   "records": [
     {
@@ -27,9 +39,39 @@
       "status": "active"
     },
     {
+      "id": "lpr-submission-review-quote-1y",
+      "kind": "quote-1y",
+      "label": "一年期报价报送版本（含来源说明与修订理由）",
+      "status": "active"
+    },
+    {
+      "id": "lpr-submission-review-quote-5y",
+      "kind": "quote-5y",
+      "label": "五年期以上报价报送版本（含来源说明与修订理由）",
+      "status": "active"
+    },
+    {
+      "id": "lpr-submission-review-eligibility",
+      "kind": "eligibility",
+      "label": "报价机构准入名单",
+      "status": "active"
+    },
+    {
+      "id": "lpr-submission-review-window",
+      "kind": "window",
+      "label": "报送窗口与截止时点",
+      "status": "active"
+    },
+    {
       "id": "lpr-submission-review-review",
       "kind": "review",
-      "label": "报价机构准入",
+      "label": "异常复核、回避分派与双人签署",
+      "status": "active"
+    },
+    {
+      "id": "lpr-submission-review-freeze",
+      "kind": "freeze",
+      "label": "计算输入冻结包（纳入范围、排除理由、签署记录、摘要）",
       "status": "pending"
     },
     {
